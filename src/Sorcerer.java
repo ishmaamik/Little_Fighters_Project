@@ -1,22 +1,39 @@
-public class Sorcerer extends Character implements Heal<Sorcerer>, Poison{
+public class Sorcerer extends Character implements Heal<Sorcerer>, Poison<Sorcerer>{
 
     int HealRate;
+    int PoisonRate;
+    public Sorcerer()
+    {
+
+    }
+    public Sorcerer(String name, Integer hitPoint, Integer proficiencyLevel, int healRate, int poisonRate)
+    {
+        Name=name;
+        HitPoint= hitPoint;
+        ProficiencyLevel= proficiencyLevel;
+        HealRate=healRate;
+        PoisonRate=poisonRate;
+    }
 
     public Integer getHealRate()
     {
         return HealRate;
     }
+    public Integer getPoisonRate()
+    {
+        return PoisonRate;
+    }
 
     @Override
     public void heal(Sorcerer A, Character B) {
-        CombatUtils.heal(A,B,HealRate);
+        HealUtils.heal(A,B,HealRate);
     }
 
     @Override
-    public void poison(Character A, Character B) {
-        Integer PoisonFactor= 3* A.ProficiencyLevel;
-        B.HitPoint-= (PoisonFactor);
-        System.out.println(B.Name+" is poisoned by "+A.Name+" to "+PoisonFactor+" points, now HP is, "+ B.getName()+": "+B.getHitPoint()+", "+A.getName()+": "+A.getHitPoint()+"\n");
-        try{Thread.sleep(3000);} catch(InterruptedException e) {}
+    public void poison(Sorcerer A, Character B) {
+        PoisonUtils.poison(A,B,PoisonRate);
     }
+
+
+
 }

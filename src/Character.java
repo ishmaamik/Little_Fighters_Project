@@ -2,12 +2,9 @@ public class Character {
     public String Name;
     public Integer HitPoint;
     public Integer ProficiencyLevel;
-
-
     public Character() {
-
+        //create object, then assign their name, proficiency level etc
     }
-
     public Character(String name, Integer hitPoint, Integer proficiencyLevel) {
         Name = name;
         HitPoint = hitPoint;

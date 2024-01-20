@@ -1,6 +1,4 @@
 public class Warrior extends Character implements Strike<Warrior>{
-
-
     int StrikeRate;
     public Warrior()
     {
@@ -13,14 +11,14 @@ public class Warrior extends Character implements Strike<Warrior>{
         ProficiencyLevel= proficiencyLevel;
         StrikeRate= strikeRate;
     }
+    public void strike (Warrior A, Character B)
+    {
+        StrikeUtils.strike(A, B, StrikeRate);
 
+    }
     public Integer getStrikeRate() {
         return StrikeRate;
     }
 
-    public void strike (Warrior A, Character B)
-    {
-        CombatUtils.strike(A, B, StrikeRate);
 
-    }
 }

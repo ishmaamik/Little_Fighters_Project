@@ -1,0 +1,214 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Warrior",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1505748702 { 
+   	label=Warrior
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Warrior1505748702[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Warrior</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   StrikeRate: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ strike(A: Warrior, B: Character)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1723492351 { 
+   	label=StrikeUtils
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   StrikeUtils1723492351[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)StrikeUtils</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ strike(A: T, B: Character, x: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2767475 { 
+   	label=Yuri
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Yuri2767475[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Yuri</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_334437220 { 
+   	label=Swordsman
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Swordsman334437220[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Swordsman</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   StrikeRate: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ strike(A: Warrior, B: Character)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_568284079 { 
+   	label=Deadlock
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Deadlock568284079[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Deadlock</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_726803703 { 
+   	label=Character
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Character726803703[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Character</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   HitPoint: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   Name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   ProficiencyLevel: Integer [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Character726803703 -> Swordsman334437220[arrowhead=none, arrowtail=empty, dir=both];
+Character726803703 -> Warrior1505748702[arrowhead=none, arrowtail=empty, dir=both];
+StrikeUtils1723492351 -> Swordsman334437220[arrowhead=none];
+StrikeUtils1723492351 -> Warrior1505748702[arrowhead=none];
+Swordsman334437220 -> StrikeUtils1723492351[label="strike() -> strike()"];
+Warrior1505748702 -> Deadlock568284079[arrowhead=none, arrowtail=empty, dir=both];
+Warrior1505748702 -> StrikeUtils1723492351[label="strike() -> strike()"];
+Warrior1505748702 -> Swordsman334437220[arrowhead=none];
+Warrior1505748702 -> Yuri2767475[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
